@@ -1,0 +1,769 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #20231f;
+    background: #f7f6f2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    min-height: 86px;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: #fff;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #c4a36a;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 12px;
+    color: #555;
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: #b18b4c;
+}
+
+.header-btn {
+    border: 1px solid #d8d4cb;
+    padding: 13px 19px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.header-btn:hover {
+    background: #20231f;
+    color: white;
+}
+
+.hero {
+    position: relative;
+    min-height: 690px;
+    display: flex;
+    align-items: center;
+    padding: 90px 10%;
+    color: white;
+    background:
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90')
+        center 55% / cover no-repeat;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 20, 17, .88),
+        rgba(15, 20, 17, .42) 65%,
+        rgba(15, 20, 17, .15)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    animation: appear 1s ease both;
+}
+
+.eyebrow {
+    color: #d5b67d;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6.5vw, 86px);
+    line-height: 1.08;
+    letter-spacing: -4px;
+    font-weight: 600;
+}
+
+.hero h1 span,
+.about h2 span,
+.advantages h2 span,
+.contact h2 span {
+    color: #c7a66c;
+}
+
+.hero-text {
+    max-width: 460px;
+    margin-top: 25px;
+    color: #deded9;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 35px;
+}
+
+.gold-btn {
+    display: inline-block;
+    padding: 17px 23px;
+    background: #c4a36a;
+    color: #171a16;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.gold-btn:hover {
+    background: #e0c28a;
+    transform: translateY(-3px);
+}
+
+.text-btn {
+    font-size: 12px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 25px;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #ddd;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.section {
+    padding: 110px 10%;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #9c7b45;
+    font-weight: 700;
+    margin-bottom: 45px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: end;
+}
+
+.about h2,
+.section-heading h2,
+.advantages h2,
+.contact h2 {
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.about-description p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.dark-link {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c4a36a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #dedbd3;
+    margin-top: 70px;
+    padding-top: 30px;
+    gap: 20px;
+}
+
+.stat h3 {
+    font-size: 35px;
+    letter-spacing: -1px;
+}
+
+.stat p {
+    color: #888;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.projects {
+    background: #eeece5;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.section-heading p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+.project-count {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #8d7650;
+    padding-bottom: 7px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 25px;
+}
+
+.project-image {
+    position: relative;
+    height: 310px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.project-card.large .project-image {
+    height: 390px;
+}
+
+.project-card:hover .project-image {
+    background-position: center 45%;
+}
+
+.image-one {
+    background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85');
+}
+
+.image-two {
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85');
+}
+
+.image-three {
+    background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=85');
+}
+
+.image-four {
+    background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85');
+}
+
+.project-status {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 13px;
+    color: #fff;
+    background: rgba(20, 25, 21, .75);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.round-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: #c4a36a;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.round-arrow:hover {
+    background: white;
+    transform: rotate(45deg);
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 19px;
+}
+
+.project-info h3 {
+    font-size: 16px;
+    letter-spacing: .3px;
+}
+
+.project-info p {
+    color: #85827b;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.project-number {
+    color: #a38a61;
+    font-size: 12px;
+}
+
+.advantages {
+    background: #20241f;
+    color: #fff;
+}
+
+.advantages h2 {
+    margin-bottom: 55px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.advantage {
+    padding-top: 25px;
+    border-top: 1px solid #51544d;
+}
+
+.advantage span {
+    color: #c4a36a;
+    font-size: 11px;
+}
+
+.advantage h3 {
+    font-size: 17px;
+    margin: 27px 0 13px;
+}
+
+.advantage p {
+    color: #b6b8b0;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.contact {
+    padding: 110px 10%;
+    text-align: center;
+    background:
+        linear-gradient(rgba(21, 25, 21, .87), rgba(21, 25, 21, .87)),
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85')
+        center / cover;
+    color: white;
+}
+
+.contact h2 {
+    margin-bottom: 25px;
+}
+
+.contact-content > p:not(.eyebrow) {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.footer {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+}
+
+.footer p,
+.footer > a:last-child {
+    color: #777;
+    font-size: 10px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 620px;
+        padding: 80px 7%;
+    }
+
+    .section {
+        padding: 80px 7%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 35px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 35px;
+    }
+}
+
+@media (max-width: 560px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .header-btn {
+        padding: 11px;
+        font-size: 10px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 590px;
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-text {
+        font-size: 12px;
+    }
+
+    .hero-bottom {
+        font-size: 8px;
+        letter-spacing: .5px;
+    }
+
+    .hero-buttons {
+        gap: 17px;
+        flex-wrap: wrap;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-label {
+        margin-bottom: 30px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .project-count {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .project-image,
+    .project-card.large .project-image {
+        height: 280px;
+    }
+
+    .about h2,
+    .section-heading h2,
+    .advantages h2,
+    .contact h2 {
+        font-size: 35px;
+        letter-spacing: -1.5px;
+    }
+
+    .stats {
+        margin-top: 45px;
+    }
+
+    .stat h3 {
+        font-size: 29px;
+    }
+
+    .advantages-grid {
+        gap: 30px 18px;
+    }
+
+    .advantage h3 {
+        font-size: 15px;
+    }
+
+    .contact {
+        padding: 75px 6%;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        padding: 25px 6%;
+    }
+}
+
+/* Плавное появление элементов */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Появление с задержкой */
+.project-card:nth-child(2) {
+    transition-delay: .1s;
+}
+
+.project-card:nth-child(3) {
+    transition-delay: .2s;
+}
+
+.project-card:nth-child(4) {
+    transition-delay: .3s;
+}
+
+/* Эффект при наведении на карточки */
+.project-card {
+    transition: transform .4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-image {
+    transition: background-size .5s ease, filter .4s ease;
+}
+
+.project-card:hover .project-image {
+    filter: brightness(1.08);
+}
+
+/* Подчёркивание ссылок меню */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #c4a36a;
+    transition: width .3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Появление заголовка */
+.hero-content {
+    animation: heroEnter 1.2s cubic-bezier(.2, .7, .3, 1) both;
+}
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация золотых кнопок */
+.gold-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.gold-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, .4),
+        transparent
+    );
+    transform: skewX(-20deg);
+}
+
+.gold-btn:hover::after {
+    left: 150%;
+    transition: left .7s ease;
+}
+
+/* Кнопка наверх */
+.back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #c4a36a;
+    color: #20231f;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: .3s;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Индикатор прокрутки страницы */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: #c4a36a;
+    z-index: 2000;
+}
+
+/* Удобство на телефонах */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid #d8d4cb;
+    background: transparent;
+    color: #20231f;
+    font-size: 23px;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .header {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .header nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #fff;
+        border-top: 1px solid #eee;
+    }
+
+    .header nav.menu-open {
+        display: flex;
+    }
+
+    .header nav a {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
